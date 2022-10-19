@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <title>Calculadora Bônus</title>
+</head>
+<body>
+    <h1>Calculadora de Bônus</h1>
+    <p>Informe a data inicial e final</p>
+    <div>
+        <form>
+            <label for="data_inicial">Data inicial:</label>
+            <label for="bonus" id="lab_bonus">Bonus:</label>
+            <br>
+            <input type="date" id="data_inicial">
+            <input type="number" id="bonus" min="0" max="10">
+            <br>
+            <label for="data_final">Data final:</label>
+            <br>
+            <input type="date" id="data_final">
+            <br><br>
+            <input type="checkbox" id="sinistro" value="sinistro">
+            <label for="sinistro">Renovação com sinistro?</label>
+            <br>
+            <input type="checkbox" id="ren_335" value="ren_335">
+            <label for="ren_335">Renovação de apólice com mais de 335 dias?</label>
+            <br><br>
+            <input type="submit" id="button" name="button">
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
