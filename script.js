@@ -1,27 +1,53 @@
-var data_inicial;
-var data_final;
-var bonus;
+/**
+ * @desct Verifica se o botton de enviar foi clicado
+ */
 var button = document.getElementById("button");
+/**
+ * @desc recebe o valor da checkbox
+ */
 var checkbox = document.getElementById("sinistro");
+
 button.onclick = function() {
-    data_inicial = document.getElementById("data_inicial").value;
-    data_final = document.getElementById("data_final").value;
-    bonus = document.getElementById("bonus").value;
+    /**
+     * @Desc Recebe o valor do input data inicial.
+     */
+    var data_inicial = document.getElementById("data_inicial").value;
+
+    /**
+     * @Desc Recebe o valor do input data final.
+     */
+    var data_final = document.getElementById("data_final").value;
+    /**
+     * @Desc Recebe o valor do input data bônus.
+     */
+    var bonus = document.getElementById("bonus").value;
     
     /**
-     * Formata a variavel data_inicial_1 em DD/MM/AAAA
+     * @Desc Formata de AAAA-MM-DD para DD/MM/AAAA
      */
     var data_inicial_1 = data_inicial.split('-').reverse().join('/');
     /**
-     * Formata a variavel em DD/MM/AAAA
+     * @Desc Formata de AAAA-MM-DD para DD/MM/AAAA
      */
     var data_inicial_2 = data_final.split('-').reverse().join('/');
 
-    /*  calculo de diferença entre as datas*/
+    /** 
+     * @Desc Calculo de diferença entre as datas 
+     * 
+     */
     var datadif = new Date(data_final) - new Date(data_inicial);
+    /**
+     * @Desc Converte para dias
+     */
     var dias = datadif / (1000 * 60 * 60 * 24);
     console.log(dias);
 
+
+/**
+ * @desc Verifica qual intervale o numero de dias pertece.
+ * @param {number} dias 
+ * @returns {string} Qual internvalo o valor pertence.
+ */
   function determinarBonus(dias) {
     let resultado;
     if(dias >= 0 && dias <= 30 ) {
