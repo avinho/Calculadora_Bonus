@@ -1,5 +1,5 @@
 /**
- * erifica se o botton de enviar foi clicado
+ * Verifica se o botton de enviar foi clicado
  * @var botton
  */
 var button = document.getElementById("button");
@@ -16,19 +16,19 @@ button.onclick = function() {
     * Recebe o valor do input data bônus.
     * @var bonus 
     */
-    var bonus = document.getElementById("bonus").value;
+    let bonus = document.getElementById("bonus").value;
 
     /**
     * Recebe o valor do input data inicial.
     * @var data_inicial
     */
-    var data_inicial = document.getElementById("data_inicial").value;
+    let data_inicial = document.getElementById("data_inicial").value;
 
     /**
      * Recebe o valor do input data final.
      * @var data_final
      */
-    var data_final = document.getElementById("data_final").value;
+    let data_final = document.getElementById("data_final").value;
 
     if(bonus === ""){
         alert("Informe o bônus.");
@@ -36,26 +36,26 @@ button.onclick = function() {
   } else if(data_inicial !== "" && data_final !== ""){ 
         /**
          * Formata de AAAA-MM-DD para DD/MM/AAAA
-         @var data_inicial_1
+         @var data_inicial_formatada
         */
-        var data_inicial_1 = data_inicial.split('-').reverse().join('/');
+        let data_inicial_formatada = data_inicial.split('-').reverse().join('/');
 
         /**
          * Formata de AAAA-MM-DD para DD/MM/AAAA
-         * @var data_inicial_2
+         * @var data_final_formatada
          */
-        var data_inicial_2 = data_final.split('-').reverse().join('/');
+        let data_final_formatada = data_final.split('-').reverse().join('/');
 
         /** 
          * Calculo de diferença entre as datas 
          * @var datadif
          */
-        var datadif = new Date(data_final) - new Date(data_inicial);
+        let datadif = new Date(data_final) - new Date(data_inicial);
         /**
          * Converte para dias
          * @var dias
          */
-        var dias = datadif / (1000 * 60 * 60 * 24);
+        let dias = datadif / (1000 * 60 * 60 * 24);
         console.log(dias);
 
 
@@ -123,9 +123,9 @@ button.onclick = function() {
         }
         console.log(determinarBonus(dias) + bonus);
             if(checkboxSinistro.checked) {
-                alert("Data inicia: " + data_inicial_1 + "\n\nData final: " + data_inicial_2 + "\n\nDias: " + dias + "\n\nRenovação com sinistro" + "\n\nBônus informado: " + bonus + "\n\nResultado: " + determinarBonus(dias));
+                alert("Data inicia: " + data_inicial_formatada + "\n\nData final: " + data_final_formatada + "\n\nDias: " + dias + "\n\nRenovação com sinistro" + "\n\nBônus informado: " + bonus + "\n\nResultado: " + determinarBonus(dias));
             } else {
-                alert("Data inicia: " + data_inicial_1 + "\n\nData final: " + data_inicial_2 + "\n\nDias: " + dias + "\n\nBônus informado: " + bonus +  "\n\nResultado: " + determinarBonus(dias));
+                alert("Data inicia: " + data_inicial_formatada + "\n\nData final: " + data_final_formatada + "\n\nDias: " + dias + "\n\nBônus informado: " + bonus +  "\n\nResultado: " + determinarBonus(dias));
             }  
  } else {
     alert("Preencha as datas.");
